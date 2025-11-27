@@ -1,0 +1,236 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: 
+        linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+        url('img/logonova.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* Container vertical do header (botões + título) */
+.header-container {
+    display: flex;
+    flex-direction: column; /* empilha verticalmente */
+    align-items: center;
+    gap: 100px; /* espaço entre botões e título */
+    margin-top: 50px; /* distância do topo da página */
+}
+
+/* Container exclusivo para os botões */
+.container-botoes {
+    display: flex; /* coloca os botões lado a lado */
+    gap: 250px;     /* distância horizontal entre os botões */
+}
+
+.estudiologo{
+     width: 300px;       /* tamanho da foto */
+  height: 200px;      /* importante usar mesma largura e altura */
+  border-radius: 50%; /* transforma em círculo */
+  object-fit: cover;  /* garante que a imagem se ajuste sem distorcer */
+  opacity: 0.7;
+}
+
+
+.titulo {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Estilo dos botões */
+.meu-botao, .meu-botao2 {
+    text-decoration: none;
+    background-color: #5a544a;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.meu-botao:hover, .meu-botao2:hover {
+    background-color: #000000;
+}
+
+.titulo2{
+font-size: 60px;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-weight: bold;
+}
+
+.titulo2{
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+
+  background: linear-gradient(90deg, #ff9900, #ffa500, #ffff00, #a07d0a62, #866907, #ffbf36, #ffa600);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; /* deixa só o degradê visível */
+}
+
+.traco{
+    color: #d38a03;
+}
+
+.redes-sociais{
+    font-size: 100px;
+    color: white;
+}
+
+.botao-fixo {
+    text-decoration: none;
+    font-size: xx-large;
+    width: 600px;         
+    height: 60px;         
+    background-color: #5a544a;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    text-align: center;   
+    line-height: 50px;    
+    overflow: hidden;     
+    white-space: nowrap;  
+    transition: background 0.3s;
+}
+.botao-fixo:hover {
+    background-color: #000000;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.botao-fixo2 {
+    text-decoration: none;
+    font-size: xx-large;
+    width: 600px;         
+    height: 60px;         
+    background-color: #5a544a;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    text-align: center;   
+    line-height: 50px;    
+    overflow: hidden;     
+    white-space: nowrap;  
+    transition: background 0.3s;
+}
+.botao-fixo2:hover {
+    background-color: #000000;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.botao-fixo3 {
+    text-decoration: none;
+    font-size: xx-large;
+    width: 600px;         /* largura fixa */
+    height: 60px;         /* altura fixa */
+    background-color: #5a544a;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    text-align: center;   /* centraliza texto horizontalmente */
+    line-height: 50px;    /* centraliza texto verticalmente */
+    overflow: hidden;     /* corta o texto que ultrapassar, se quiser */
+    white-space: nowrap;  /* impede quebra de linha */
+    transition: background 0.3s;
+}
+.botao-fixo3:hover {
+    background-color: #000000;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.botao-fixo4 {
+    text-decoration: none;
+    font-size: xx-large;
+    width: 600px;        
+    height: 60px;         
+    background-color: #5a544a;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    text-align: center;   
+    line-height: 50px;    
+    overflow: hidden;     
+    white-space: nowrap;  
+    transition: background 0.3s;
+}
+.botao-fixo4:hover {
+    background-color: #000000;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.botao-fixo5 {
+    text-decoration: none;
+    font-size: xx-large;
+    width: 600px;        
+    height: 60px;         
+    background-color: #5a544a;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    text-align: center;   
+    line-height: 50px;    
+    overflow: hidden;     
+    white-space: nowrap;  
+    transition: background 0.3s;
+}
+.botao-fixo5:hover {
+    background-color: #000000;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Overlay do QR Code */
+#overlayQRCode {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 999;
+}
+
+/* Estilo do QR Code */
+#imagemQRCode {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 250px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+    display: none;        /* inicialmente invisível */
+    z-index: 1000;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+}
+
+/* Quando estiver visível */
+#imagemQRCode.show {
+    display: block !important;   /* força exibir mesmo com display:none inline */
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.05);
+}
