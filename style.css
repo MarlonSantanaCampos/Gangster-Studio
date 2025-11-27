@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    /* Imagem de fundo e estilos */
     background-image: 
         linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
         url('img/logonova.jpeg');
@@ -9,6 +10,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
 
+    /* Configuração centralizada para o corpo */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,39 +18,80 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* Container vertical do header (botões + título) */
-.header-container {
+section {
+    /* Centraliza o conteúdo e limita a largura máxima */
+    width: 95%; /* Ocupa quase toda a largura disponível */
+    max-width: 600px; /* Limita o tamanho em telas maiores (desktop) */
     display: flex;
-    flex-direction: column; /* empilha verticalmente */
+    flex-direction: column; 
     align-items: center;
-    gap: 100px; /* espaço entre botões e título */
-    margin-top: 50px; /* distância do topo da página */
+    box-sizing: border-box; /* Garante que padding e borda sejam incluídos na largura */
+    padding: 10px 0; /* Adiciona um pequeno padding vertical */
 }
 
-/* Container exclusivo para os botões */
-.container-botoes {
-    display: flex; /* coloca os botões lado a lado */
-    gap: 250px;     /* distância horizontal entre os botões */
+/* Container vertical do header */
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Reduzido de 100px para evitar muito espaço */
+    margin-top: 30px;
+    width: 100%;
+}
+
+/* Container e estilos para os botões de ação inferiores */
+.botoes-acao-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px; /* espaço entre botões */
+    padding: 0 8px; /* pequenas margens internas para não encostar nas bordas da section */
+    box-sizing: border-box;
+}
+
+.botoes-acao-container .meu-botao,
+.meu-botao.botao-acao {
+    width: 100%;
+    max-width: calc(100% - 16px); /* deixa um pequeno respiro lateral dentro da section */
+    padding: 14px 18px; /* aumenta a área clicável */
+    font-size: 18px;
+    border-radius: 18px;
+    box-sizing: border-box;
+}
+
+/* Container exclusivo para os botões QR Code e Compartilhar */
+.container-botoes-topo {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.container-botoes-topo .meu-botao {
+    flex: 1; /* Faz com que cada botão ocupe porção igual do espaço na linha */
+    width: auto; /* Anula o width:100% do seletor global .meu-botao */
+    max-width: 48%; /* Garante um pequeno espaçamento lateral entre os botões */
 }
 
 .estudiologo{
-     width: 300px;       /* tamanho da foto */
-  height: 200px;      /* importante usar mesma largura e altura */
-  border-radius: 50%; /* transforma em círculo */
-  object-fit: cover;  /* garante que a imagem se ajuste sem distorcer */
-  opacity: 0.7;
+    width: 200px; /* Reduzido de 300px */
+    height: 200px; /* Reduzido de 200px */
+    border-radius: 50%;
+    object-fit: cover;
+    opacity: 0.7;
 }
 
-
 .titulo {
-    font-size: 40px;
+    font-size: 30px; /* Ajuste para mobile */
     font-weight: bold;
     text-align: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-/* Estilo dos botões */
-.meu-botao, .meu-botao2 {
+/* Estilo dos botões do header */
+.meu-botao {
     text-decoration: none;
     background-color: #5a544a;
     color: white;
@@ -59,148 +102,81 @@ body {
     border-radius: 30px;
     cursor: pointer;
     transition: background 0.3s;
+    text-align: center; /* Garante centralização */
+    width: 100%; /* Ocupa a largura total do .container-botoes */
+    box-sizing: border-box;
 }
 
-.meu-botao:hover, .meu-botao2:hover {
+.meu-botao:hover {
     background-color: #000000;
 }
 
-.titulo2{
-font-size: 60px;
-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-font-weight: bold;
+h3 {
+    text-align: center;
+    font-size: 1em; /* Ajuste o tamanho da fonte */
+    padding: 0 10px;
 }
 
 .titulo2{
-  font-size: 50px;
-  font-weight: bold;
-  text-align: center;
-
-  background: linear-gradient(90deg, #ff9900, #ffa500, #ffff00, #a07d0a62, #866907, #ffbf36, #ffa600);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; /* deixa só o degradê visível */
+    font-size: 40px; /* Reduzido de 60px */
+    font-weight: bold;
+    text-align: center;
+    background: linear-gradient(90deg, #ff9900, #ffa500, #ffff00, #a07d0a62, #866907, #ffbf36, #ffa600);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 0 10px;
 }
 
 .traco{
     color: #d38a03;
+    /* O traço gigante estava causando rolagem. Reduzido e ajustado */
+    font-size: 1em; 
+    white-space: normal;
+    word-break: break-all;
+    max-width: 100%;
 }
 
 .redes-sociais{
-    font-size: 100px;
+    font-size: 60px; /* Reduzido de 100px */
     color: white;
 }
 
-.botao-fixo {
+/* Estilos unificados para todos os botões de link fixos */
+.botao-fixo, .botao-fixo2, .botao-fixo3, .botao-fixo4, .botao-fixo5 {
     text-decoration: none;
-    font-size: xx-large;
-    width: 600px;         
-    height: 60px;         
+    font-size: x-large; /* Ajuste o tamanho da fonte */
+    
+    /* CORREÇÃO PRINCIPAL: Largura fluida para mobile */
+    width: 90%; 
+    max-width: 450px; /* Limite em telas maiores */
+    
+    height: 60px; /* Altura mantida ou ajustada */
     background-color: #5a544a;
     color: white;
     border: none;
     border-radius: 20px;
     cursor: pointer;
-    text-align: center;   
-    line-height: 50px;    
-    overflow: hidden;     
-    white-space: nowrap;  
-    transition: background 0.3s;
+    
+    /* Centraliza o conteúdo horizontal e verticalmente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Remove line-height fixo desnecessário */
+    line-height: normal; 
+    margin: 8px 0; /* Espaçamento entre os botões */
+    box-sizing: border-box; 
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
 }
-.botao-fixo:hover {
+
+/* Unifica o hover para todos os botões */
+.botao-fixo:hover, .botao-fixo2:hover, .botao-fixo3:hover, .botao-fixo4:hover, .botao-fixo5:hover {
     background-color: #000000;
-    transform: scale(1.05);
+    transform: scale(1.03); /* Levemente reduzido para mobile */
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-.botao-fixo2 {
-    text-decoration: none;
-    font-size: xx-large;
-    width: 600px;         
-    height: 60px;         
-    background-color: #5a544a;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    text-align: center;   
-    line-height: 50px;    
-    overflow: hidden;     
-    white-space: nowrap;  
-    transition: background 0.3s;
-}
-.botao-fixo2:hover {
-    background-color: #000000;
-    transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-
-.botao-fixo3 {
-    text-decoration: none;
-    font-size: xx-large;
-    width: 600px;         /* largura fixa */
-    height: 60px;         /* altura fixa */
-    background-color: #5a544a;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    text-align: center;   /* centraliza texto horizontalmente */
-    line-height: 50px;    /* centraliza texto verticalmente */
-    overflow: hidden;     /* corta o texto que ultrapassar, se quiser */
-    white-space: nowrap;  /* impede quebra de linha */
-    transition: background 0.3s;
-}
-.botao-fixo3:hover {
-    background-color: #000000;
-    transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-
-.botao-fixo4 {
-    text-decoration: none;
-    font-size: xx-large;
-    width: 600px;        
-    height: 60px;         
-    background-color: #5a544a;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    text-align: center;   
-    line-height: 50px;    
-    overflow: hidden;     
-    white-space: nowrap;  
-    transition: background 0.3s;
-}
-.botao-fixo4:hover {
-    background-color: #000000;
-    transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-
-.botao-fixo5 {
-    text-decoration: none;
-    font-size: xx-large;
-    width: 600px;        
-    height: 60px;         
-    background-color: #5a544a;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    text-align: center;   
-    line-height: 50px;    
-    overflow: hidden;     
-    white-space: nowrap;  
-    transition: background 0.3s;
-}
-.botao-fixo5:hover {
-    background-color: #000000;
-    transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-
-/* Overlay do QR Code */
+/* Estilos para o QR Code (mantidos) */
 #overlayQRCode {
     display: none;
     position: fixed;
@@ -212,7 +188,6 @@ font-weight: bold;
     z-index: 999;
 }
 
-/* Estilo do QR Code */
 #imagemQRCode {
     position: fixed;
     top: 50%;
@@ -222,15 +197,14 @@ font-weight: bold;
     height: 250px;
     border-radius: 15px;
     box-shadow: 0 8px 30px rgba(0,0,0,0.6);
-    display: none;        /* inicialmente invisível */
+    display: none;
     z-index: 1000;
     transition: opacity 0.3s ease, transform 0.3s ease;
     opacity: 0;
 }
 
-/* Quando estiver visível */
 #imagemQRCode.show {
-    display: block !important;   /* força exibir mesmo com display:none inline */
+    display: block !important;
     opacity: 1;
     transform: translate(-50%, -50%) scale(1.05);
 }
